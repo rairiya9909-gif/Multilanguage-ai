@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>🌐 Voice Translator</title>
+    <!-- Google Fonts for premium typography -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+    <div class="background-decor"></div>
+    <div class="app-container">
+        <header>
+            <div class="logo">🎙️</div>
+            <h1>Voice Translator</h1>
+            <p class="subtitle">Translate speech and text in real-time</p>
+        </header>
+
+        <main class="card">
+            <!-- Text Input Area -->
+            <div class="input-section">
+                <label for="text-input" class="section-label">Enter Text:</label>
+                <div class="text-area-wrapper">
+                    <textarea id="text-input" placeholder="Type here or use voice input..." rows="3"></textarea>
+                </div>
+            </div>
+
+            <!-- Language Dropdowns -->
+            <div class="languages-section">
+                <div class="select-group">
+                    <label for="src-lang">From Language</label>
+                    <div class="select-wrapper">
+                        <select id="src-lang">
+                            <option value="English" selected>English</option>
+                            <option value="Hindi">Hindi</option>
+                            <option value="Marathi">Marathi</option>
+                            <option value="Bengali">Bengali</option>
+                            <option value="Gujarati">Gujarati</option>
+                            <option value="Tamil">Tamil</option>
+                            <option value="Telugu">Telugu</option>
+                            <option value="Kannada">Kannada</option>
+                            <option value="Malayalam">Malayalam</option>
+                            <option value="Punjabi">Punjabi</option>
+                            <option value="Urdu">Urdu</option>
+                        </select>
+                    </div>
+                </div>
+
+                <div class="swap-btn-container">
+                    <button id="swap-langs-btn" title="Swap Languages" aria-label="Swap Languages">🔁</button>
+                </div>
+
+                <div class="select-group">
+                    <label for="dest-lang">To Language</label>
+                    <div class="select-wrapper">
+                        <select id="dest-lang">
+                            <option value="English">English</option>
+                            <option value="Hindi" selected>Hindi</option>
+                            <option value="Marathi">Marathi</option>
+                            <option value="Bengali">Bengali</option>
+                            <option value="Gujarati">Gujarati</option>
+                            <option value="Tamil">Tamil</option>
+                            <option value="Telugu">Telugu</option>
+                            <option value="Kannada">Kannada</option>
+                            <option value="Malayalam">Malayalam</option>
+                            <option value="Punjabi">Punjabi</option>
+                            <option value="Urdu">Urdu</option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Action Buttons -->
+            <div class="buttons-grid">
+                <button id="voice-btn" class="btn btn-voice">
+                    <span class="btn-icon">🎤</span>
+                    <span class="btn-text">Voice Input</span>
+                </button>
+                <button id="translate-btn" class="btn btn-translate">
+                    <span class="btn-icon">🔁</span>
+                    <span class="btn-text">Translate</span>
+                </button>
+                <button id="speak-btn" class="btn btn-speak">
+                    <span class="btn-icon">🔊</span>
+                    <span class="btn-text">Speak Output</span>
+                </button>
+            </div>
+
+            <!-- Translation Output Area -->
+            <div class="output-section">
+                <label class="section-label">Translation Result:</label>
+                <div class="output-box" id="result-box">
+                    <span class="placeholder-text">Translation will appear here...</span>
+                </div>
+            </div>
+        </main>
+
+        <footer>
+            <div id="status-bar" class="status-bar">Ready</div>
+        </footer>
+    </div>
+
+    <script src="{{ url_for('static', filename='js/main.js') }}"></script>
+</body>
+</html>
